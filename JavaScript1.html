@@ -1,0 +1,54 @@
+//Create five paragraph using html and change the first chatacter background and forgrund of a paragraph by using user choice as per desired..
+//use id.
+//document.getElementById("User will enter the id")
+//then we will take the colour
+//and use element.innerhtml or Document.
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <p id="1">First ParaGraph </p>
+    <p id="2">Second ParaGraph</p>
+    <p id="3">Third ParaGraph</p>
+
+    <p id="4">Fourth ParaGraph</p>
+
+    <p id="5">Fifth ParaGraph</p>
+
+     <script>
+        
+        function change(e){
+
+            var c=prompt("enter the character");
+            var value=document.getElementById(e).innerHTML;
+            
+            var newm=value.slice(1);            
+            var newvalue=c+newm;
+            
+            document.getElementById(e).innerHTML=newvalue;
+
+        }
+
+        var val=prompt("Enter the paragraph that you want to change");
+        var colour=prompt("Enter the background colour");
+        var fc=prompt("Enter the foreground colour");
+
+        var element=document.getElementById(`${val}`);
+        element.style.backgroundColor=colour;
+        element.style.color=fc;
+        
+    </script> 
+
+    <button onClick="change(this.value)" value="1">Change Colour of 1</button>
+    <button onClick="change(this.value)" value="2">Change Colour of 2</button>
+    <button onClick="change(this.value)" value="3">Change Colour of 3</button>
+    <button onClick="change(this.value)" value="4">Change Colour of 4</button> 
+    <button onClick="change(this.value)" value="5">Change Colour of 5</button> 
+</body>
+</html>
