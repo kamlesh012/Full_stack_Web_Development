@@ -1,0 +1,53 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+</head>
+<body>
+    <p>
+    Create a web page with a button that displays a random quote each time the button is clicked. The quotes should be stored in an array, and a new quote should be chosen randomly each time the button is clicked. The web page should also display the number of times the button has been clicked. Use event handling in JavaScript to achieve this functionality.
+Requirements:
+
+Create an array of at least 10 quotes.
+Use HTML and CSS to create a button and a container for the quote and click counter.
+Use JavaScript to handle the button click event, and display a random quote from the array each time the button is clicked.
+Display the number of times the button has been clicked next to the button.
+</p>
+  
+<button onclick="generate()">Generate Quote</button><span id="clicked"></span>
+    <script>
+        function generate(){
+            cnt++;
+            var num=Math.floor(Math.random()*10);
+            console.log(num);
+            // alert(`${quotes[num]}`);
+            alert(quotes[num]);
+            document.getElementById("clicked").innerHTML=cnt;
+            // for(var i=0;i<quotes.length;i++){
+            //     console.log(i);
+            //     console.log(quotes[i]);
+            // }
+        }
+      
+        var cnt=0;
+        var quotes=["Life is not what happens to you,But what you do after whatever happens to you",
+        "Analysis done for too long becomes paralysis",
+        "Good things take time whether",
+        "A friend to all is a friend to none",
+        "Sacrifice is what differentiates a successful person from a failure.","Life is built on hope",
+        "Be happy with what you have,& work hard for the things that you want","Hardwork beats talent when talent doesn't work hard",
+        "Barking dogs seldom bite",
+    "Action speaks louder than words"];
+
+        // quotes.forEach(print);
+
+        // function print(val,ind){
+        //     console.log(val);
+            // console.log(ind);
+        // }
+    </script>
+</body>
+</html>
