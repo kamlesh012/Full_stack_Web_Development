@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch in Java Script</title>
+    
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <div id="boundary"> 
+        <div id="clock">
+            <span class="btn" id="hour">00</span>::<span class="btn" id="minute">00</span>::<span class="btn" id="second">00</span>
+        </div>
+        <button onClick="start()" id="start">START</button> 
+        <button onClick="stop()" id="stop">STOP</button>
+        <button onClick="stop()" id="reset">RESET</button>
+        
+    </div>
+
+    <script>
+        var started=0;
+        var timer=0,min=0,hr=0,sec=0;
+        function start(){   
+            if(started==0)
+            {
+                started++;
+                setInterval(()=>{
+                timer++;
+                min=Math.floor(timer/60);
+                hr=Math.floor(timer/60);
+                sec=timer%60;
+                if(sec==0){
+                    document.getElementById("minute").innerHTML=min;
+                    document.getElementById("hour").innerHTML=hr;
+                }
+                document.getElementById("second").innerHTML=sec;
+                console.log(element);
+            },1000);
+            document.getElementById("start").disable();
+        }
+        }
+        function stop(){
+            started=0;
+            clearInterval();
+                timer=0;
+                document.getElementById("start").enable();
+                sec=0;
+                min=0;
+                hr=0;
+                document.getElementById("second").innerHTML=sec;
+                document.getElementById("minute").innerHTML=min;
+                document.getElementById("hour").innerHTML=hr;
+        }
+        function reset(){
+            stop();
+        }
+    </script>
+</body>
+</html>
