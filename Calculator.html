@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>
+            Calculator Program by Self in Javascript
+        </title>
+        <style>
+            table{
+                height: 512;
+                width: 480;
+            }
+            button{
+                width:auto;
+                padding:50px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div align="center" >
+            <h1> Jugaadu Calculator </h1>
+            <textarea id="1" textalign="center" placeholder=" Calculation  here"></textarea>
+        </div>
+
+        <table align="center" >
+            <tr>
+                <td><button value="1" onclick="press(1)">1</button></td>
+                <td><button value="2" onclick="press(2)">2</button></td>
+                <td><button value="3" onclick="press(3)">3</button></td>
+                <td><button value="+" onclick="press('+')">+</button></td>
+            </tr>
+                <td><button value="4" onclick="press(4)">4</button></td>
+                <td><button value="5" onclick="press(5)">5</button></td>
+                <td><button value="6" onclick="press(6)">6</button></td>
+                <td><button value="-" onclick="press('-')">-</button></td>
+
+            <tr>
+            </tr>
+                <td><button value="7" onclick="press(7)">7</button></td>
+                <td><button value="8" onclick="press(8)">8</button></td>
+                <td><button value="9" onclick="press(9)">9</button></td>
+                <td><button value="*" onclick="press('*')">*</button></td>
+
+            <tr>
+            </tr>
+                <td><button value="0" onclick="press(value)">0</button> </td>
+                <td><button value="=" onclick="calculate()">=</button></td>
+                <td><button value="Del" onclick="del()">Del</button></td>
+                <td><button value="/" onclick="press(value)">/</button></td>
+            <tr>
+            </tr>
+        </table>
+        <script>
+            function del(){
+                element=document.getElementById('1').value;
+                newstring=element.slice(0,-1);
+                document.getElementById('1').value=newstring;
+            }
+            function press(e){
+                element=document.getElementById('1').value;
+                document.getElementById('1').value=element+e;
+            }
+            function calculate(){  
+                element=document.getElementById('1').value;
+                var ans=eval(element);
+                document.getElementById('1').value=ans;
+            }
+        </script>
+    </body>
+</html>
