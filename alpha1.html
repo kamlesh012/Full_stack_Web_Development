@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print Alphabets</title>
+  <script>
+    function printAlphabets() {
+      // Get the form input values
+      var l = document.getElementById('lower').value;
+      var r = document.getElementById('upper').value;
+
+      // Validate the inputs
+      if (l < 1 || l > 26 || r < 1 || r > 26) {
+        alert('Invalid input! Please enter numbers between 1 and 26.');
+        return;
+      }
+
+      // Convert the inputs to numbers
+      l = parseInt(l);
+      r = parseInt(r);
+
+      // Convert the numbers to their corresponding alphabets
+      var result = '';
+      for (var i = l; i <= r; i++) {
+        var alphabet = String.fromCharCode(i + 64); // 65 is the ASCII code for 'A'
+        result += alphabet + ' ';
+      }
+
+      // Display the alphabets
+      document.getElementById('output').textContent = result;
+    }
+  </script>
+</head>
+<body>
+  <h1>Print Alphabets</h1>
+  <form>
+    <label for="l">Enter the starting number (l):</label>
+    <input type="number" id="lower" name="lower" min="1" max="26" required>
+    <br>
+    <label for="r">Enter the ending number ():</label>
+    <input type="number" id="upper" name="upper" min="1" max="26" required>
+    <br>
+    <button type="button" onclick="printAlphabets()">Print</button>
+  </form>
+  <div id="output"></div>
+</body>
+</html>
